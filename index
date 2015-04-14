@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.0/angular.js" data-semver="1.4.0-rc.0"></script>
+  <script src="app.js"></script>
+  <script src="dsScreen.js"></script>
+  <script src="dsWidget.js"></script>
+  <script src="dsWidget-all.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div id="config">
+    <textarea id="config-text" cols="30" rows="100" ng-model="configJSON" ng-model-options="{debounce: 300}"></textarea>
+  </div>
+  <div id="output">
+    <ds-screen config="config" context="data" on-point-updated="pointUpdated(path, val)"></ds-screen>
+  </div>
+</body>
+
+</html>
